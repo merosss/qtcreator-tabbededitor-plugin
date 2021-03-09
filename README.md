@@ -14,7 +14,7 @@ The aim of this plugin is to provide a tab-based experience in [Qt Creator](http
 
 After cloning the package you will need to edit the project build variables file to find your sources and libraries.
 
-1. Go to **Progject > Build Environment** and add the following variables:
+1. Go to **Project > Build Environment** and add the following variables:
   - QTC_BUILD: `*your-Qt-Creator-install-folder*/Tools/QtCreator`.
   - QTC_SOURCE: The source code folder your downloaded in the previous step.
 
@@ -38,7 +38,7 @@ To fix this problem I had to manually rename these libraries, removing the trail
 
 #### Dependencies not found at Qt Creator Startup
 
-If you get the error of some Qt Dependencies not found, it is highly probable that you downloaded a mismatching version of the Qt Creator Sources (for example the master branch). To check if your branch is correct look inside the **qtcreator_ide_branding.pri** file, and check if the `QT_CREATOR_VERSION` variable, and the following ones are correct.
+If you get the error of some Qt Dependencies not found, it is highly probable that you downloaded a mismatching version of the Qt Creator Sources (for example the master branch). To check if your branch is correct look inside the **qtcreator_ide_branding.pri** file, and check if the `QT_CREATOR_VERSION` variable, and the following ones, are correct.
 
 ## Copyright / License
 
