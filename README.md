@@ -40,11 +40,3 @@ To fix this problem I had to manually rename these libraries, removing the trail
 
 If you get the error of some Qt Dependencies not found, it is highly probable that you downloaded a mismatching version of the Qt Creator Sources (for example the master branch).
 To check if your branch is correct look inside the **qtcreator_ide_branding.pri** file, and check if the `QT_CREATOR_VERSION` variable, and the following ones, are correct.
-
-## Copyright / License
-
-Copyright (C) 2021 Francesco Wanderlingh.
-
-This software is available under the terms of the GNU Lesser General Public License version 3 (LGPLv3).
-
-This project is a fork of [QtCreator Tabbed Editor Plugin](https://github.com/trollixx/qtcreator-tabbededitor-plugin) by Oleg Shparber.
