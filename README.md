@@ -6,23 +6,25 @@ The aim of this plugin is to provide a tab-based experience in [Qt Creator](http
 
 ### Identify Qt Creator version and download the source code
 
-0. To compile the package you firstly need to check your Qt Creator version from *"Help > About Qt Creator..."* (this package, for example, is targeting Qt Creator 4.14.1).
+1. To compile the package you firstly need to check your Qt Creator version from *"Help > About Qt Creator..."* (this package, for example, is targeting Qt Creator 4.14.1).
 
-0. Then go to the official [Qt Creator repository](https://github.com/qt-creator/qt-creator) and download the branch corresponding your version (click on the `master` dropdown menu and check fot it in the Tags section.
+2. Then go to the official [Qt Creator repository](https://github.com/qt-creator/qt-creator) and download the branch corresponding your version (click on the `master` dropdown menu and check fot it in the Tags section.
 
 ### Clone the repository and adjust variables
 
 After cloning the package you will need to edit the project build variables file to find your sources and libraries.
 
-0. Go to **Progject > Build Environment** and add the following variables:
-  - QTC_BUILD: `your-Qt-Creator-install-folder/Tools/QtCreator`.
+1. Go to **Progject > Build Environment** and add the following variables:
+  - QTC_BUILD: `*your-Qt-Creator-install-folder*/Tools/QtCreator`.
   - QTC_SOURCE: The source code folder your downloaded in the previous step.
 
-0. Build project
+2. Build project
 
-### Library linking issues
+### Known issues
 
-For some reasons unkown to my knowledge, the linker was not able to link the libraries found in *Qt/Tools/QtCreator/lib/qtcreator*, with the error:
+#### Library Linking
+
+For some reasons unkown to my knowledge, the linker was not able to link the libraries found in *Qt/Tools/QtCreator/lib/qtcreator*, with the compile error:
 
 ```
 /usr/bin/ld: cannot find -lQtcSsh
@@ -34,6 +36,9 @@ For some reasons unkown to my knowledge, the linker was not able to link the lib
 
 To fix this problem I had to manually rename these libraries, removing the trailing **.4** in the name (for example *libQtcSsh.so.4* to *libQtcSsh.so*). I am sure there is another correct approach to solve this issue but I was unable to find one, any help is appreciated.
 
+#### Dependencies not found at Qt Creator Startup
+
+If you get the error of some Qt Dependencies not found, it is highly probable that you downloaded a mismatching version of the Qt Creator Sources (for example the master branch). To check if your branch is correct look inside the **qtcreator_ide_branding.pri** file, and check if the `QT_CREATOR_VERSION` variable, and the following ones are correct.
 
 ## Copyright / License
 
